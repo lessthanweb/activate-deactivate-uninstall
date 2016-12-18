@@ -68,9 +68,9 @@ class LTW_SecretCastle {
 		add_option( 'secret_castle_location', '5.884663, -162.079791' );
         
 		//	You can also create new tables, set new permalinks and so on.
-    }
+	}
     
-    /**
+	/**
 	 * When plugin is uninstalled (deleted), let's clear the junk that the plugin made on activation.
 	 *
 	 * @param	void
@@ -88,7 +88,7 @@ class LTW_SecretCastle {
 		delete_option( 'secret_castle_location' );
         
 		//	In uninstall function you should remove all the tables, custom options and so on if your plugin made them.
-    }
+	}
     
 	/**
 	 * When plugin is deactivated, let's remove things like custom permalinks, flush cache...
@@ -111,5 +111,5 @@ class LTW_SecretCastle {
         
 		//	On deactivation you should remove custom permalinks, flush cache and so on.
 		//	Things that are more dynamic in nature.
-    }
+	}
 }
