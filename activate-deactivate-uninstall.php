@@ -56,18 +56,18 @@ class LTW_SecretCastle {
 	public static function activate() {
 		//	First you should always check that the user who is trying to activate has the required capability.
 		if ( ! current_user_can( 'activate_plugins' ) ) {
-            return false;
+			return false;
 		}
 		
 		//	Check nonce
 		$plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
 	
-        check_admin_referer( 'activate-plugin_' . $plugin );
+		check_admin_referer( 'activate-plugin_' . $plugin );
         
-        //	Let's save the location of my secret castle into options table
-        add_option( 'secret_castle_location', '5.884663, -162.079791' );
+		//	Let's save the location of my secret castle into options table
+		add_option( 'secret_castle_location', '5.884663, -162.079791' );
         
-        //	You can also create new tables, set new permalinks and so on.
+		//	You can also create new tables, set new permalinks and so on.
     }
     
     /**
@@ -81,16 +81,16 @@ class LTW_SecretCastle {
 	public static function uninstall() {
 		//	First you should always check that the user who is trying to activate has the required capability.
 		if ( ! current_user_can( 'activate_plugins' ) ) {
-            return false;
+			return false;
 		}
         
-        //	Let's delete the option that we create on plugin activation.
-        delete_option( 'secret_castle_location' );
+		//	Let's delete the option that we create on plugin activation.
+		delete_option( 'secret_castle_location' );
         
-        //	In uninstall function you should remove all the tables, custom options and so on if your plugin made them.
+		//	In uninstall function you should remove all the tables, custom options and so on if your plugin made them.
     }
     
-    /**
+	/**
 	 * When plugin is deactivated, let's remove things like custom permalinks, flush cache...
 	 *
 	 * @param	void
@@ -101,15 +101,15 @@ class LTW_SecretCastle {
 	public static function deactivate() {
 		//	First you should always check that the user who is trying to activate has the required capability.
 		if ( ! current_user_can( 'activate_plugins' ) ) {
-            return false;
+			return false;
 		}
 		
 		//	Check nonce
 		$plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
 	
-        check_admin_referer( 'deactivate-plugin_' . $plugin );
+		check_admin_referer( 'deactivate-plugin_' . $plugin );
         
-        //	On deactivation you should remove custom permalinks, flush cache and so on.
-        //	Things that are more dynamic in nature.
+		//	On deactivation you should remove custom permalinks, flush cache and so on.
+		//	Things that are more dynamic in nature.
     }
 }
